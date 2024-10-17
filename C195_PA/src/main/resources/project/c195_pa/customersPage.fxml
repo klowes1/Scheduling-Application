@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.c195_pa.controller.customersPageController">
+    <children>
+        <TabPane maxHeight="280.0" prefHeight="280.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="cstmrTab" text="Customers">
+                    <content>
+                        <TableView fx:id="cstmList" maxHeight="200.0" prefHeight="200.0" prefWidth="1000.0">
+                            <columns>
+                                <TableColumn fx:id="customerID" resizable="false" text="Customer ID" />
+                                <TableColumn fx:id="cstmrName" prefWidth="125.0" resizable="false" text="Customer Name" />
+                                <TableColumn fx:id="addressC" prefWidth="100.0" resizable="false" text="Address" />
+                                <TableColumn fx:id="pstlCodeC" resizable="false" text="Postal Code" />
+                                <TableColumn fx:id="phoneC" prefWidth="105.0" resizable="false" text="Phone" />
+                                <TableColumn fx:id="crtDateC" resizable="false" text="Create Date" />
+                                <TableColumn fx:id="crtByC" resizable="false" text="Created By" />
+                                <TableColumn fx:id="lastUpdtC" prefWidth="90.0" resizable="false" text="Last Update" />
+                                <TableColumn fx:id="updtByC" prefWidth="100.0" resizable="false" text="Last Updated By" />
+                                <TableColumn fx:id="dvsIDC" resizable="false" text="Division ID" />
+                                <TableColumn fx:id="ctryC" text="Country" />
+                            </columns>
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                            </columnResizePolicy>
+                        </TableView>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <ToolBar layoutY="230.0" prefHeight="50.0" prefWidth="1000.0">
+            <items>
+                <Button fx:id="addCstmrBtn" minWidth="55.0" mnemonicParsing="false" onAction="#addCstmrClicked" text="Add" />
+                <Button fx:id="updateCstmrBtn" layoutX="10.0" layoutY="23.0" minWidth="55.0" mnemonicParsing="false" onAction="#updateCstmrClicked" text="Update" translateX="25.0" />
+                <Button fx:id="delCstmrBtn" layoutX="10.0" layoutY="23.0" minWidth="55.0" mnemonicParsing="false" onAction="#deleteCstmrClicked" text="Delete" translateX="50.0" />
+                <Button fx:id="cstmrCnlBtMenu" layoutX="122.0" layoutY="23.0" minWidth="55.0" mnemonicParsing="false" onAction="#returnMain" text="Cancel" translateX="675.0" />
+            </items>
+            <padding>
+                <Insets left="50.0" right="50.0" />
+            </padding>
+        </ToolBar>
+        <Accordion fx:id="cstmrAccord" layoutY="279.0" maxHeight="0.0" minHeight="0.0" minWidth="1000.0" visible="false">
+            <panes>
+                <TitledPane fx:id="cstmrTitledPane" expanded="false" minHeight="300.0" prefWidth="1000.0" text="Customer Menu">
+                    <content>
+                        <AnchorPane prefWidth="1000.0">
+                            <children>
+                                <HBox alignment="CENTER_LEFT" layoutX="49.0" layoutY="14.0" minWidth="900.0" prefWidth="900.0" spacing="15.0">
+                                    <children>
+                                        <VBox maxHeight="175.0" spacing="30.0" translateX="100.0" translateY="-30.0">
+                                            <children>
+                                                <Text fx:id="cstmrIDTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer ID">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font></Text>
+                                                <Text fx:id="cstmrNmTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font></Text>
+                                                <Text fx:id="cstmrCntryTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Country">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font></Text>
+                                                <Text fx:id="dvsIDT" strokeType="OUTSIDE" strokeWidth="0.0" text="Division ID" visible="false">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font></Text>
+                                            </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets top="28.0" />
+                                 </padding>
+                                        </VBox>
+                                        <VBox alignment="TOP_CENTER" maxHeight="175.0" spacing="24.0" translateX="100.0" translateY="-28.0">
+                                            <children>
+                                                <TextField fx:id="cstmID" disable="true" editable="false" prefWidth="155.0" promptText="Customer ID" />
+                                                <TextField fx:id="cstmName" prefWidth="155.0" promptText="Customer Name" />
+                                                <ComboBox fx:id="ctryID" onAction="#ctrySelected" prefWidth="155.0" promptText="Country" />
+                                                <ComboBox fx:id="dvsnID" prefWidth="155.0" promptText="Division ID" visible="false" />
+                                            </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets top="25.0" />
+                                 </padding>
+                                        </VBox>
+                                        <VBox maxHeight="175.0" spacing="30.0" translateX="250.0" translateY="-38.0">
+                                            <children>
+                                                <Text fx:id="cstmrAddTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font></Text>
+                                                <Text fx:id="cstmrPstlTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Postal Code">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font></Text>
+                                                <Text fx:id="cstmrPhnTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font></Text>
+                                            </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets top="28.0" />
+                                 </padding>
+                                        </VBox>
+                                        <VBox alignment="TOP_CENTER" maxHeight="175.0" spacing="24.0" translateX="250.0" translateY="-38.0">
+                                            <children>
+                                                <TextField fx:id="address" prefWidth="155.0" promptText="Address" />
+                                                <TextField fx:id="pstlCode" prefWidth="155.0" promptText="Postal Code" />
+                                                <TextField fx:id="phnNum" prefWidth="155.0" promptText="Phone Number" />
+                                            </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets top="25.0" />
+                                 </padding>
+                                        </VBox>
+                                    </children>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                                </HBox>
+                        <HBox fx:id="updateMenu" layoutX="642.0" layoutY="185.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="saveCstmr_U" minWidth="55.0" mnemonicParsing="false" onAction="#saveClicked" text="Save" />
+                              <Button fx:id="cancelCstmr_U" minWidth="55.0" mnemonicParsing="false" onAction="#cancelClicked" text="Cancel" />
+                              <Button fx:id="applyCstmr_U" minWidth="55.0" mnemonicParsing="false" onAction="#applyClicked" text="Apply" />
+                           </children>
+                        </HBox>
+                        <HBox fx:id="addMenu" layoutX="642.0" layoutY="185.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="saveCstmr_A" minWidth="55.0" mnemonicParsing="false" onAction="#saveClicked" text="Save" />
+                              <Button fx:id="cancelCstmr_A" minWidth="55.0" mnemonicParsing="false" onAction="#cancelClicked" text="Cancel" />
+                              <Button fx:id="applyCstmr_A" minWidth="55.0" mnemonicParsing="false" onAction="#applyClicked" text="Apply" />
+                           </children>
+                        </HBox>
+                            </children></AnchorPane>
+                    </content></TitledPane>
+            </panes>
+        </Accordion>
+    </children>
+</AnchorPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.c195_pa.controller.menuPageController">
+   <children>
+      <Text fx:id="navTitleTxt" layoutX="153.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Navigation Menu">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <HBox alignment="CENTER" layoutX="238.0" layoutY="303.0" spacing="25.0">
+         <children>
+            <Button fx:id="logBt" minWidth="40.0" mnemonicParsing="false" onAction="#logOutClicked" text="Log Out" />
+            <Button fx:id="exitBt" minWidth="40.0" mnemonicParsing="false" onAction="#exitClicked" text="Exit" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="100.0" layoutY="200.0" spacing="50.0">
+         <children>
+            <Button fx:id="logsBt" minWidth="100.0" mnemonicParsing="false" onAction="#reportsClicked" text="Reports" />
+            <Button fx:id="cstmrBt" minWidth="100.0" mnemonicParsing="false" onAction="#customersClicked" text="Customers" />
+            <Button fx:id="apptBt" minWidth="100.0" mnemonicParsing="false" onAction="#appointmentsClicked" text="Appointments" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

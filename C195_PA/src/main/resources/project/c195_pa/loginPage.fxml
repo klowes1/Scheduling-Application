@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.c195_pa.controller.loginPageController">
+
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+   <Label fx:id="title1" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="52.0" layoutY="35.0" text="Scheduling Application" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Label>
+
+    <TextField fx:id="user_name" layoutX="50.0" layoutY="110.0" maxWidth="200" prefHeight="25" prefWidth="200" promptText="Username" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+    <PasswordField fx:id="password" layoutX="50.0" layoutY="150.0" maxWidth="200.0" prefHeight="25" prefWidth="200" promptText="Password" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+
+    <Button fx:id="loginB" layoutX="180.0" layoutY="195.0" minWidth="50.0" onAction="#loginClicked" text="Login" AnchorPane.rightAnchor="40.0" />
+    <Button fx:id="cancelB" layoutX="60.0" layoutY="195.0" minWidth="50.0" onAction="#cancelClicked" text="Exit" AnchorPane.leftAnchor="40.0" />
+
+   <Label fx:id="title2" alignment="CENTER" layoutX="133.0" layoutY="80.0" text="Login" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+   <Label fx:id="localeL" alignment="BOTTOM_CENTER" layoutX="134.0" layoutY="269.0" text="Locale" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+
+</AnchorPane>

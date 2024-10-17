@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="apptmentPane" maxHeight="354.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.c195_pa.controller.appointmentsPageController">
+   <children>
+      <TabPane fx:id="tabSlct" maxHeight="280.0" prefHeight="280.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab fx:id="allApptTab" onSelectionChanged="#tabChange" text="All Appointments">
+                <content>
+                    <TableView fx:id="allAppts" maxHeight="200.0" prefHeight="200.0" prefWidth="1000.0">
+                        <columns>
+                            <TableColumn fx:id="apptID_A" minWidth="20.0" text="Appointment ID" />
+                            <TableColumn fx:id="title_A" text="Title" />
+                            <TableColumn fx:id="desc_A" text="Description" />
+                            <TableColumn fx:id="location_A" text="Location" />
+                            <TableColumn fx:id="contact_A" text="Contact" />
+                            <TableColumn fx:id="type_A" text="Type" />
+                            <TableColumn fx:id="start_A" minWidth="40.0" text="Start Date and Time" />
+                            <TableColumn fx:id="end_A" minWidth="40.0" text="End Date and Time" />
+                            <TableColumn fx:id="cstmID_A" text="Customer ID" />
+                            <TableColumn fx:id="usrID_A" text="User ID" />
+                        </columns>
+                        <columnResizePolicy>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                        </columnResizePolicy>
+                    </TableView>
+                </content>
+            </Tab>
+          <Tab fx:id="apptMonthTab" onSelectionChanged="#tabChange" text="Month">
+            <content>
+                <TableView fx:id="monthAppts" maxHeight="200.0" prefHeight="200.0" prefWidth="1000.0">
+                  <columns>
+                      <TableColumn fx:id="apptID_M" minWidth="20.0" text="Appointment ID" />
+                      <TableColumn fx:id="title_M" text="Title" />
+                      <TableColumn fx:id="desc_M" text="Description" />
+                      <TableColumn fx:id="location_M" text="Location" />
+                      <TableColumn fx:id="contact_M" text="Contact" />
+                      <TableColumn fx:id="type_M" text="Type" />
+                      <TableColumn fx:id="start_M" minWidth="40.0" text="Start Date and Time" />
+                      <TableColumn fx:id="end_M" minWidth="40.0" text="End Date and Time" />
+                      <TableColumn fx:id="cstmID_M" text="Customer ID" />
+                      <TableColumn fx:id="usrID_M" text="User ID" />
+                  </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                </TableView>
+            </content>
+          </Tab>
+          <Tab fx:id="apptWeekTab" onSelectionChanged="#tabChange" text="Week">
+            <content>
+                <TableView fx:id="weekAppts" maxHeight="200.0" prefHeight="200.0" prefWidth="1000.0">
+                    <columns>
+                        <TableColumn fx:id="apptID_W" minWidth="20.0" text="Appointment ID" />
+                        <TableColumn fx:id="title_W" text="Title" />
+                        <TableColumn fx:id="desc_W" text="Description" />
+                        <TableColumn fx:id="location_W" text="Location" />
+                        <TableColumn fx:id="contact_W" text="Contact" />
+                        <TableColumn fx:id="type_W" text="Type" />
+                        <TableColumn fx:id="start_W" minWidth="40.0" text="Start Date and Time" />
+                        <TableColumn fx:id="end_W" minWidth="40.0" text="End Date and Time" />
+                        <TableColumn fx:id="cstmID_W" text="Customer ID" />
+                        <TableColumn fx:id="usrID_W" text="User ID" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <ToolBar layoutY="230.0" prefHeight="50.0" prefWidth="1000.0">
+        <items>
+            <DatePicker fx:id="dtPick" onAction="#dateSelected" promptText="Select Date" />
+    <Button fx:id="addBtMenu" minWidth="55.0" mnemonicParsing="false" onAction="#addApptClicked" text="Add" translateX="50.0" />
+    <Button fx:id="updBtMenu" layoutX="10.0" layoutY="23.0" minWidth="55.0" mnemonicParsing="false" onAction="#updateApptClicked" text="Update" translateX="60.0" />
+    <Button fx:id="delBtMenu" layoutX="10.0" layoutY="23.0" minWidth="55.0" mnemonicParsing="false" onAction="#deleteApptClicked" text="Delete" translateX="70.0" />
+    <Button fx:id="cnlBtMenu" layoutX="122.0" layoutY="23.0" minWidth="55.0" mnemonicParsing="false" onAction="#returnMain" text="Cancel" translateX="475.0" />
+        </items>
+         <padding>
+            <Insets left="25.0" right="50.0" />
+         </padding>
+      </ToolBar>
+      <Accordion fx:id="apptAccord" layoutY="279.0" maxHeight="0.0" minWidth="1000.0">
+        <panes>
+          <TitledPane fx:id="apptTitledPane" expanded="false" maxHeight="1.7976931348623157E308" prefWidth="1000.0" text="Appointment Menu">
+               <content>
+                  <AnchorPane prefHeight="300.0" prefWidth="1000.0">
+                     <children>
+                        <HBox fx:id="addApptMenu" layoutX="660.0" layoutY="275.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="saveAppt_A" minWidth="55.0" mnemonicParsing="false" onAction="#saveClicked" text="Save" />
+                              <Button fx:id="cnlBt_A" minWidth="55.0" mnemonicParsing="false" onAction="#cancelClicked" text="Cancel" />
+                              <Button fx:id="aplBt_A" minWidth="55.0" mnemonicParsing="false" onAction="#applyClicked" text="Apply" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="50.0" layoutY="15.0" minHeight="250.0" minWidth="900.0" spacing="15.0">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" spacing="30.0" translateX="25.0">
+                                 <children>
+                                    <Text fx:id="apptIDTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment ID">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Text>
+                                     <Text fx:id="apptTtlTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Title">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Text>
+                                     <Text fx:id="apptDescTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Text>
+                                     <Text fx:id="apptLocTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Location">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Text>
+                                     <Text fx:id="apptCntcTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Text>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" spacing="24.0" translateX="25.0">
+                                 <children>
+                                    <TextField fx:id="apptID" disable="true" editable="false" promptText="Appointment ID" />
+                                     <TextField fx:id="title" promptText="Title" />
+                                     <TextField fx:id="desc" promptText="Description" />
+                                     <TextField fx:id="location" promptText="Location" />
+                                     <ComboBox fx:id="contact" maxWidth="173.0" minWidth="149.0" promptText="Contact" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" spacing="30.0" translateX="50.0">
+                                 <children>
+                                     <Text fx:id="apptTpTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Text>
+                                     <Text fx:id="apptStDtTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Date">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Text>
+                                     <Text fx:id="apptEndDtTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="End Date">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Text>
+                                     <Text fx:id="apptCstmIDTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer ID">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Text>
+                                     <Text fx:id="apptUsrIDTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Text>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" spacing="24.0" translateX="50.0">
+                                 <children>
+                                     <TextField fx:id="type" promptText="Type" />
+                                     <DatePicker fx:id="startDt" promptText="Start Date" />
+                                     <DatePicker fx:id="endDt" promptText="End Date" />
+                                     <TextField fx:id="cstmrID" promptText="Customer ID" />
+                                     <TextField fx:id="userID" promptText="User ID" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" layoutX="289.0" layoutY="10.0" spacing="30.0" translateX="50.0">
+                                 <children>
+                                    <Text fx:id="apptStTmTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Time">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="apptEndTmTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="End Time">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="52.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox alignment="CENTER" layoutX="427.0" layoutY="10.0" spacing="24.0" translateX="50.0">
+                                 <children>
+                                    <HBox prefWidth="200.0">
+                                       <children>
+                                          <ComboBox fx:id="startHr" promptText="Hour" />
+                                          <ComboBox fx:id="startMnt" layoutX="10.0" layoutY="10.0" promptText="Minute" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefWidth="200.0">
+                                       <children>
+                                          <ComboBox fx:id="endHr" promptText="Hour" />
+                                          <ComboBox fx:id="endMnt" layoutX="10.0" layoutY="10.0" promptText="Minute" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="52.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="updateApptMenu" layoutX="660.0" layoutY="275.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="saveAppt_U" minWidth="55.0" mnemonicParsing="false" onAction="#saveClicked" text="Save" />
+                              <Button fx:id="cnlBt_U" minWidth="55.0" mnemonicParsing="false" onAction="#cancelClicked" text="Cancel" />
+                              <Button fx:id="aplBt_U" minWidth="55.0" mnemonicParsing="false" onAction="#applyClicked" text="Apply" />
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+               </content></TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</AnchorPane>
